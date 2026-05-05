@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NGI Edge — Lead Conversion Systems for Contractors</title>
+  <meta name="description" content="NGI Edge installs done-for-you lead conversion systems for contractors and service businesses. Instant response, automated follow-up, more booked jobs." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0C1A2E;
+      --navy-mid: #112240;
+      --blue: #378ADD;
+      --blue-light: #85B7EB;
+      --white: #FFFFFF;
+      --gray: #94A3B8;
+      --gray-light: #E2E8F0;
+      --text: #1E293B;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(12,26,46,0.96);
+      backdrop-filter: blur(8px);
+      padding: 0 2rem; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      z-index: 100;
+      border-bottom: 1px solid rgba(55,138,221,0.15);
+    }
+    .nav-logo { font-size: 1.2rem; font-weight: 600; color: #fff; letter-spacing: 0.05em; }
+    .nav-logo span { color: #378ADD; }
+    .nav-cta {
+      background: #378ADD; color: #fff; padding: 0.5rem 1.25rem;
+      border-radius: 6px; text-decoration: none; font-size: 0.875rem; font-weight: 500;
+    }
+    .nav-cta:hover { background: #2570C0; }
+
+    .hero {
+      background: #0C1A2E; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 8rem 2rem 6rem; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(55,138,221,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 760px; position: relative; }
+    .hero-badge {
+      display: inline-block; background: rgba(55,138,221,0.12);
+      border: 1px solid rgba(55,138,221,0.3); color: #85B7EB;
+      font-size: 0.8rem; font-weight: 500; padding: 0.35rem 1rem;
+      border-radius: 100px; margin-bottom: 1.5rem; letter-spacing: 0.04em;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 1.5rem; }
+    .hero h1 span { color: #378ADD; }
+    .hero p { font-size: 1.125rem; color: #85B7EB; max-width: 580px; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .hero-cta {
+      display: inline-block; background: #378ADD; color: #fff;
+      padding: 0.9rem 2.25rem; border-radius: 8px; text-decoration: none;
+      font-size: 1rem; font-weight: 600;
+    }
+    .hero-cta:hover { background: #2570C0; }
+    .hero-sub { margin-top: 1rem; font-size: 0.825rem; color: #94A3B8; }
+    .hero-accent { width: 60px; height: 2px; background: #378ADD; margin: 3rem auto 0; }
+
+    .stats {
+      background: #112240; padding: 3rem 2rem;
+      border-top: 1px solid rgba(55,138,221,0.15);
+      border-bottom: 1px solid rgba(55,138,221,0.15);
+    }
+    .stats-inner {
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem; text-align: center;
+    }
+    .stat-number { font-size: 2.25rem; font-weight: 700; color: #378ADD; display: block; }
+    .stat-label { font-size: 0.875rem; color: #85B7EB; margin-top: 0.25rem; }
+
+    section { padding: 6rem 2rem; }
+    .section-inner { max-width: 900px; margin: 0 auto; }
+    .section-tag { font-size: 0.75rem; font-weight: 600; color: #378ADD; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .section-title { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; color: #1E293B; margin-bottom: 1.25rem; line-height: 1.25; }
+    .section-body { font-size: 1rem; color: #475569; max-width: 640px; line-height: 1.8; }
+
+    .problem { background: #F8FAFC; }
+    .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .problem-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.75rem; }
+    .problem-icon { width: 40px; height: 40px; background: #FEE2E2; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.1rem; }
+    .problem-card h3 { font-size: 1rem; font-weight: 600; color: #1E293B; margin-bottom: 0.5rem; }
+    .problem-card p { font-size: 0.9rem; color: #64748B; line-height: 1.6; }
+    .stat-callout { background: #0C1A2E; border-radius: 12px; padding: 2rem; margin-top: 3rem; text-align: center; }
+    .stat-callout p { color: #85B7EB; font-size: 1.1rem; line-height: 1.7; }
+    .stat-callout strong { color: #fff; }
+
+    .solution { background: #fff; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .step { border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.75rem; position: relative; }
+    .step-number { font-size: 0.75rem; font-weight: 700; color: #378ADD; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+    .step h3 { font-size: 1rem; font-weight: 600; color: #1E293B; margin-bottom: 0.5rem; }
+    .step p { font-size: 0.875rem; color: #64748B; line-height: 1.6; }
+    .step-accent { position: absolute; top: 0; left: 1.75rem; width: 40px; height: 3px; background: #378ADD; border-radius: 0 0 3px 3px; }
+
+    .who { background: #F8FAFC; }
+    .who-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+    .who-tag { background: #fff; border: 1px solid #E2E8F0; border-radius: 100px; padding: 0.5rem 1.25rem; font-size: 0.875rem; font-weight: 500; color: #1E293B; }
+
+    .about { background: #0C1A2E; }
+    .about .section-tag { color: #85B7EB; }
+    .about .section-title { color: #fff; }
+    .about-body { font-size: 1rem; color: #85B7EB; max-width: 640px; line-height: 1.8; margin-bottom: 1.5rem; }
+    .about-points { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+    .about-point { border-left: 2px solid #378ADD; padding-left: 1rem; }
+    .about-point h4 { font-size: 0.9rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem; }
+    .about-point p { font-size: 0.825rem; color: #85B7EB; line-height: 1.5; }
+
+    .cta-section { background: #fff; text-align: center; padding: 7rem 2rem; }
+    .cta-section p { font-size: 1rem; color: #64748B; max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .cta-main {
+      display: inline-block; background: #0C1A2E; color: #fff;
+      padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none;
+      font-size: 1rem; font-weight: 600;
+    }
+    .cta-main:hover { background: #112240; }
+    .cta-note { display: block; font-size: 0.8rem; color: #94A3B8; margin-top: 0.75rem; }
+
+    footer { background: #0C1A2E; border-top: 1px solid rgba(55,138,221,0.15); padding: 2.5rem 2rem; text-align: center; }
+    .footer-logo { font-size: 1.1rem; font-weight: 600; color: #fff; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+    .footer-logo span { color: #378ADD; }
+    footer p { font-size: 0.825rem; color: #94A3B8; }
+    footer a { color: #85B7EB; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1rem; }
+      section { padding: 4rem 1.25rem; }
+      .hero { padding: 7rem 1.25rem 5rem; }
+      .stats { padding: 2.5rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">NGI <span>EDGE</span></div>
+    <a href="https://calendly.com/YOUR-LINK-HERE" target="_blank" class="nav-cta">Book a Free Call</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">Lead Conversion Systems for Contractors</div>
+      <h1>Give Your Business the <span>Edge</span> on Every Inbound Lead</h1>
+      <p>NGI Edge installs a done-for-you lead conversion system for contractors and service businesses — instant response, automated follow-up, more booked jobs. Live in under a week.</p>
+      <a href="https://calendly.com/YOUR-LINK-HERE" target="_blank" class="hero-cta">Book a Free 15-Min Call</a>
+      <p class="hero-sub">No pitch. No pressure. Just a clear picture of what's leaking.</p>
+      <div class="hero-accent"></div>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="stats-inner">
+      <div>
+        <span class="stat-number">9×</span>
+        <div class="stat-label">More likely to convert when contacted within 5 minutes</div>
+      </div>
+      <div>
+        <span class="stat-number">80%</span>
+        <div class="stat-label">Of sales happen after the first follow-up — most never send one</div>
+      </div>
+      <div>
+        <span class="stat-number">5 days</span>
+        <div class="stat-label">Average time to install your complete system</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="problem">
+    <div class="section-inner">
+      <div class="section-tag">The Problem</div>
+      <h2 class="section-title">The leads aren't the problem.</h2>
+      <p class="section-body">Most service businesses generate enough inbound interest. The problem is what happens next — missed calls, slow replies, and zero follow-up. Jobs go to whoever responded first.</p>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon">📵</div>
+          <h3>Missed calls go nowhere</h3>
+          <p>A lead calls while you're on a job. No callback happens. They move on within minutes.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">⏱</div>
+          <h3>Slow replies lose jobs</h3>
+          <p>A form comes in and you see it hours later. By then they've already booked a competitor.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🔇</div>
+          <h3>No follow-up system</h3>
+          <p>You follow up once, get no reply, and move on. That lead needed one more touch to convert.</p>
+        </div>
+      </div>
+      <div class="stat-callout">
+        <p>A lead contacted within <strong>5 minutes</strong> is <strong>9× more likely to convert</strong> than one contacted after 30 minutes. Most service businesses respond in hours — if at all.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="solution">
+    <div class="section-inner">
+      <div class="section-tag">What We Install</div>
+      <h2 class="section-title">A complete system. Installed in under a week.</h2>
+      <p class="section-body">Every component works together to make sure no lead slips through — from first contact to booked job.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-accent"></div>
+          <div class="step-number">01</div>
+          <h3>Instant Lead Response</h3>
+          <p>Every inbound lead receives an SMS within 30 seconds. Missed call, website form, ad lead — all covered automatically.</p>
+        </div>
+        <div class="step">
+          <div class="step-accent"></div>
+          <div class="step-number">02</div>
+          <h3>Automatic Qualification</h3>
+          <p>A short automated conversation gathers key information before you spend a minute on the phone.</p>
+        </div>
+        <div class="step">
+          <div class="step-accent"></div>
+          <div class="step-number">03</div>
+          <h3>Follow-Up Engine</h3>
+          <p>3–5 automated touchpoints until they respond or book. Stops automatically when they reply.</p>
+        </div>
+        <div class="step">
+          <div class="step-accent"></div>
+          <div class="step-number">04</div>
+          <h3>Booking System</h3>
+          <p>Leads book directly into your calendar. You show up. You close the job.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="who">
+    <div class="section-inner">
+      <div class="section-tag">Who It's For</div>
+      <h2 class="section-title">Built for contractors and service businesses doing $500K–$3M/year.</h2>
+      <p class="section-body">If you have inbound leads and a team that responds to them — we can make that process faster, more consistent, and more profitable.</p>
+      <div class="who-tags">
+        <span class="who-tag">General Contractors</span>
+        <span class="who-tag">Renovation Companies</span>
+        <span class="who-tag">HVAC</span>
+        <span class="who-tag">Roofing</span>
+        <span class="who-tag">Plumbing</span>
+        <span class="who-tag">Restoration</span>
+        <span class="who-tag">Foundation & Excavation</span>
+        <span class="who-tag">Specialty Trades</span>
+        <span class="who-tag">Home Services</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="section-inner">
+      <div class="section-tag">About NGI Edge</div>
+      <h2 class="section-title">Built by engineers. Measured by booked jobs.</h2>
+      <p class="about-body">NGI Edge is run by Nolan Campbell — mechanical engineer and construction industry consultant. We think in workflows, inputs, and outcomes — not buzzwords and vanity metrics.</p>
+      <p class="about-body">Every system we install is built to produce one result: more booked jobs from the leads you're already getting. No jargon. No complex software to learn. We install it, you run your business.</p>
+      <div class="about-points">
+        <div class="about-point">
+          <h4>Engineering background</h4>
+          <p>Systems thinking applied to your business — not generic marketing tactics.</p>
+        </div>
+        <div class="about-point">
+          <h4>Construction industry experience</h4>
+          <p>We understand how contractors work. No learning curve on our end.</p>
+        </div>
+        <div class="about-point">
+          <h4>Installed in under a week</h4>
+          <p>No lengthy onboarding. No disruption to how you work.</p>
+        </div>
+        <div class="about-point">
+          <h4>Measured by results</h4>
+          <p>We track conversations started, leads converted, and jobs booked.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="section-inner">
+      <div class="section-tag">Get Started</div>
+      <h2 class="section-title">Ready to stop losing jobs to slow response times?</h2>
+      <p>Book a free 15-minute call. We'll look at your current lead process and show you exactly where jobs are slipping through.</p>
+      <a href="https://calendly.com/YOUR-LINK-HERE" target="_blank" class="cta-main">Book Your Free Call</a>
+      <span class="cta-note">No pitch. No pressure. Free 15-minute conversation.</span>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">NGI <span>EDGE</span></div>
+    <p>Lead Conversion Systems for Contractors & Service Businesses</p>
+    <p style="margin-top:0.5rem;"><a href="mailto:nolan@nextgeninstitute.net">nolan@nextgeninstitute.net</a></p>
+    <p style="margin-top:1.5rem;font-size:0.75rem;">© 2026 NGI Edge. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
