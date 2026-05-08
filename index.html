@@ -132,6 +132,29 @@
     footer p { font-size: 0.825rem; color: #94A3B8; }
     footer a { color: #85B7EB; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
+    .footer-links { margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+
+    /* Privacy Policy & Terms Modal */
+    .modal-overlay {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7); z-index: 1000; padding: 2rem;
+      overflow-y: auto;
+    }
+    .modal-overlay.active { display: flex; align-items: flex-start; justify-content: center; }
+    .modal {
+      background: #fff; border-radius: 12px; padding: 2.5rem;
+      max-width: 680px; width: 100%; margin: auto; position: relative;
+    }
+    .modal h2 { font-size: 1.5rem; font-weight: 700; color: #1E293B; margin-bottom: 0.5rem; }
+    .modal p, .modal li { font-size: 0.9rem; color: #475569; line-height: 1.8; margin-bottom: 0.75rem; }
+    .modal h3 { font-size: 1rem; font-weight: 600; color: #1E293B; margin: 1.25rem 0 0.5rem; }
+    .modal ul { padding-left: 1.25rem; margin-bottom: 0.75rem; }
+    .modal-close {
+      position: absolute; top: 1rem; right: 1rem;
+      background: #F1F5F9; border: none; border-radius: 6px;
+      padding: 0.4rem 0.75rem; cursor: pointer; font-size: 0.875rem; color: #64748B;
+    }
+    .modal-close:hover { background: #E2E8F0; }
 
     @media (max-width: 600px) {
       nav { padding: 0 1rem; }
@@ -140,7 +163,6 @@
       .stats { padding: 2.5rem 1.25rem; }
     }
   </style>
-<link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
 
@@ -296,11 +318,101 @@
   </section>
 
   <footer>
-    <img src="logo.png" alt="NGI Edge" style="height:44px;">
+    <img src="logo.png" alt="NGI Edge" style="height:44px; margin-bottom: 0.75rem;">
     <p>Lead Conversion Systems for Contractors & Service Businesses</p>
     <p style="margin-top:0.5rem;"><a href="mailto:nolan@nextgeninstitute.net">nolan@nextgeninstitute.net</a></p>
+    <p style="margin-top:0.35rem;"><a href="tel:+16475847612">+1 (647) 584-7612</a></p>
+    <p style="margin-top:0.35rem; color:#94A3B8;">Toronto, ON, Canada</p>
+    <div class="footer-links">
+      <a href="#" onclick="openModal('privacy'); return false;">Privacy Policy</a>
+      <a href="#" onclick="openModal('terms'); return false;">Terms of Service</a>
+    </div>
     <p style="margin-top:1.5rem;font-size:0.75rem;">© 2026 NGI Edge. All rights reserved.</p>
   </footer>
+
+  <!-- Privacy Policy Modal -->
+  <div class="modal-overlay" id="privacy-modal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('privacy')">✕ Close</button>
+      <h2>Privacy Policy</h2>
+      <p><em>Last updated: May 2026</em></p>
+      <p>NGI Edge ("we," "us," or "our") operates this website and provides lead conversion services. This Privacy Policy explains how we collect, use, and protect your information.</p>
+
+      <h3>Information We Collect</h3>
+      <p>We may collect personal information you voluntarily provide, including your name, email address, phone number, and business details when you book a call or contact us.</p>
+
+      <h3>How We Use Your Information</h3>
+      <ul>
+        <li>To respond to your inquiries and schedule calls</li>
+        <li>To send you information about our services</li>
+        <li>To send SMS or email communications related to our services</li>
+        <li>To improve our website and services</li>
+      </ul>
+
+      <h3>SMS Communications</h3>
+      <p>By providing your phone number, you consent to receive SMS messages from NGI Edge related to our services. Message and data rates may apply. You may opt out at any time by replying STOP to any message.</p>
+
+      <h3>Data Sharing</h3>
+      <p>We do not sell, trade, or rent your personal information to third parties. We do not buy or affiliate-market leads.</p>
+
+      <h3>Data Security</h3>
+      <p>We implement reasonable security measures to protect your personal information from unauthorized access or disclosure.</p>
+
+      <h3>Contact Us</h3>
+      <p>For privacy-related questions, contact us at <a href="mailto:nolan@nextgeninstitute.net">nolan@nextgeninstitute.net</a> or call <a href="tel:+16475847612">+1 (647) 584-7612</a>. NGI Edge — Toronto, ON, Canada.</p>
+    </div>
+  </div>
+
+  <!-- Terms of Service Modal -->
+  <div class="modal-overlay" id="terms-modal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('terms')">✕ Close</button>
+      <h2>Terms of Service</h2>
+      <p><em>Last updated: May 2026</em></p>
+      <p>By accessing this website or using NGI Edge services, you agree to the following terms.</p>
+
+      <h3>Services</h3>
+      <p>NGI Edge provides lead conversion system installation and setup services for contractors and service businesses. Service details, pricing, and scope are outlined in individual service agreements.</p>
+
+      <h3>Use of Website</h3>
+      <p>You agree to use this website for lawful purposes only. You may not use this site in any way that could damage, disable, or impair the site or interfere with other users.</p>
+
+      <h3>Communications</h3>
+      <p>By submitting your contact information, you consent to be contacted by NGI Edge via email, phone, or SMS regarding our services. You may opt out at any time by contacting us directly or replying STOP to any SMS.</p>
+
+      <h3>Intellectual Property</h3>
+      <p>All content on this website, including text, graphics, and logos, is the property of NGI Edge and may not be reproduced without written permission.</p>
+
+      <h3>Limitation of Liability</h3>
+      <p>NGI Edge is not liable for any indirect, incidental, or consequential damages arising from the use of our services or this website.</p>
+
+      <h3>Contact</h3>
+      <p>Questions about these terms? Contact us at <a href="mailto:nolan@nextgeninstitute.net">nolan@nextgeninstitute.net</a> or <a href="tel:+16475847612">+1 (647) 584-7612</a>. NGI Edge — Toronto, ON, Canada.</p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(type) {
+      document.getElementById(type + '-modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(type) {
+      document.getElementById(type + '-modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    // Close modal when clicking overlay
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+  </script>
+
+  <!-- GHL Chat Widget -->
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69fd73bbba1fce51e984af1b" data-source="WEB_USER"></script>
 
 </body>
 </html>
