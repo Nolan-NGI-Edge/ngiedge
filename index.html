@@ -107,6 +107,55 @@
     .who-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
     .who-tag { background: #fff; border: 1px solid #E2E8F0; border-radius: 100px; padding: 0.5rem 1.25rem; font-size: 0.875rem; font-weight: 500; color: #1E293B; }
 
+    /* Testimonials */
+    .testimonials { background: #fff; }
+    .testimonial-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 2.5rem;
+      max-width: 700px;
+      margin-top: 3rem;
+      position: relative;
+    }
+    .testimonial-stars { display: flex; gap: 3px; margin-bottom: 1.25rem; }
+    .testimonial-stars span { color: #F59E0B; font-size: 1rem; }
+    .testimonial-text {
+      font-size: 1.05rem;
+      color: #1E293B;
+      line-height: 1.85;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #E2E8F0;
+    }
+    .testimonial-logo {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+      opacity: 0.9;
+    }
+    .testimonial-divider {
+      width: 1px;
+      height: 32px;
+      background: #CBD5E1;
+    }
+    .testimonial-author-info strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1E293B;
+    }
+    .testimonial-author-info span {
+      font-size: 0.825rem;
+      color: #64748B;
+    }
+
     .about { background: #0C1A2E; }
     .about .section-tag { color: #85B7EB; }
     .about .section-title { color: #fff; }
@@ -175,7 +224,7 @@
     <div class="hero-inner">
       <div class="hero-badge">Lead Conversion Systems for Contractors</div>
       <h1>Give Your Business the <span>Edge</span> on Every Inbound Lead</h1>
-      <p>NGI Edge installs a done-for-you lead conversion system for contractors and service businesses — instant response, automated follow-up, more booked jobs. Live in under a week.</p>
+      <p>NGI Edge installs a done-for-you lead conversion system for contractors and service businesses. Instant response, automated follow-up, more booked jobs. Live in under a week.</p>
       <a href="https://calendly.com/nolan-nextgeninstitute/30min" target="_blank" class="hero-cta">Book a Free 15-Min Call</a>
       <p class="hero-sub">No pitch. No pressure. Just a clear picture of what's leaking.</p>
       <div class="hero-accent"></div>
@@ -185,12 +234,12 @@
   <div class="stats">
     <div class="stats-inner">
       <div>
-        <span class="stat-number">9×</span>
+        <span class="stat-number">9x</span>
         <div class="stat-label">More likely to convert when contacted within 5 minutes</div>
       </div>
       <div>
         <span class="stat-number">80%</span>
-        <div class="stat-label">Of sales happen after the first follow-up — most never send one</div>
+        <div class="stat-label">Of sales happen after the first follow-up. Most never send one.</div>
       </div>
       <div>
         <span class="stat-number">5 days</span>
@@ -202,8 +251,8 @@
   <section class="problem">
     <div class="section-inner">
       <div class="section-tag">The Problem</div>
-      <h2 class="section-title">The leads aren't the problem.</h2>
-      <p class="section-body">Most service businesses generate enough inbound interest. The problem is what happens next — missed calls, slow replies, and zero follow-up. Jobs go to whoever responded first.</p>
+      <h2 class="section-title">The leads are not the problem.</h2>
+      <p class="section-body">Most service businesses generate enough inbound interest. The problem is what happens next. Missed calls, slow replies, and zero follow-up. Jobs go to whoever responded first.</p>
       <div class="problem-grid">
         <div class="problem-card">
           <div class="problem-icon">📵</div>
@@ -222,7 +271,7 @@
         </div>
       </div>
       <div class="stat-callout">
-        <p>A lead contacted within <strong>5 minutes</strong> is <strong>9× more likely to convert</strong> than one contacted after 30 minutes. Most service businesses respond in hours — if at all.</p>
+        <p>A lead contacted within <strong>5 minutes</strong> is <strong>9x more likely to convert</strong> than one contacted after 30 minutes. Most service businesses respond in hours, if at all.</p>
       </div>
     </div>
   </section>
@@ -231,13 +280,13 @@
     <div class="section-inner">
       <div class="section-tag">What We Install</div>
       <h2 class="section-title">A complete system. Installed in under a week.</h2>
-      <p class="section-body">Every component works together to make sure no lead slips through — from first contact to booked job.</p>
+      <p class="section-body">Every component works together to make sure no lead slips through, from first contact to booked job.</p>
       <div class="steps">
         <div class="step">
           <div class="step-accent"></div>
           <div class="step-number">01</div>
           <h3>Instant Lead Response</h3>
-          <p>Every inbound lead receives an SMS within 30 seconds. Missed call, website form, ad lead — all covered automatically.</p>
+          <p>Every inbound lead receives an SMS within 30 seconds. Missed call, website form, ad lead. All covered automatically.</p>
         </div>
         <div class="step">
           <div class="step-accent"></div>
@@ -249,7 +298,7 @@
           <div class="step-accent"></div>
           <div class="step-number">03</div>
           <h3>Follow-Up Engine</h3>
-          <p>3–5 automated touchpoints until they respond or book. Stops automatically when they reply.</p>
+          <p>3 to 5 automated touchpoints until they respond or book. Stops automatically when they reply.</p>
         </div>
         <div class="step">
           <div class="step-accent"></div>
@@ -264,8 +313,8 @@
   <section class="who">
     <div class="section-inner">
       <div class="section-tag">Who It's For</div>
-      <h2 class="section-title">Built for contractors and service businesses doing $500K–$3M/year.</h2>
-      <p class="section-body">If you have inbound leads and a team that responds to them — we can make that process faster, more consistent, and more profitable.</p>
+      <h2 class="section-title">Built for contractors and service businesses doing $500K to $3M per year.</h2>
+      <p class="section-body">If you have inbound leads and a team that responds to them, we can make that process faster, more consistent, and more profitable.</p>
       <div class="who-tags">
         <span class="who-tag">General Contractors</span>
         <span class="who-tag">Renovation Companies</span>
@@ -273,9 +322,35 @@
         <span class="who-tag">Roofing</span>
         <span class="who-tag">Plumbing</span>
         <span class="who-tag">Restoration</span>
-        <span class="who-tag">Foundation & Excavation</span>
+        <span class="who-tag">Foundation &amp; Excavation</span>
         <span class="who-tag">Specialty Trades</span>
         <span class="who-tag">Home Services</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="section-inner">
+      <div class="section-tag">Client Results</div>
+      <h2 class="section-title">What our clients are saying.</h2>
+      <p class="section-body">Real results from real service businesses that installed the NGI Edge system.</p>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <span>&#9733;</span>
+          <span>&#9733;</span>
+          <span>&#9733;</span>
+          <span>&#9733;</span>
+          <span>&#9733;</span>
+        </div>
+        <p class="testimonial-text">"Before NGI Edge, we were losing jobs and didn't even know it. Leads would come in while we were on-site and by the time we got back to them, they'd already booked someone else. Now every lead gets a response instantly and we've seen a real jump in booked jobs. Honestly, it just runs."</p>
+        <div class="testimonial-author">
+          <img src="purespace-logo.png" alt="PureSpace Cleaning" class="testimonial-logo" />
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-author-info">
+            <strong>Liam</strong>
+            <span>Co-Founder, PureSpace Cleaning</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -284,12 +359,12 @@
     <div class="section-inner">
       <div class="section-tag">About NGI Edge</div>
       <h2 class="section-title">Built by engineers. Measured by booked jobs.</h2>
-      <p class="about-body">NGI Edge is run by Nolan Campbell — mechanical engineer and construction industry consultant. We think in workflows, inputs, and outcomes — not buzzwords and vanity metrics.</p>
+      <p class="about-body">NGI Edge is run by Nolan Campbell, mechanical engineer and construction industry consultant. We think in workflows, inputs, and outcomes. Not buzzwords and vanity metrics.</p>
       <p class="about-body">Every system we install is built to produce one result: more booked jobs from the leads you're already getting. No jargon. No complex software to learn. We install it, you run your business.</p>
       <div class="about-points">
         <div class="about-point">
           <h4>Engineering background</h4>
-          <p>Systems thinking applied to your business — not generic marketing tactics.</p>
+          <p>Systems thinking applied to your business. Not generic marketing tactics.</p>
         </div>
         <div class="about-point">
           <h4>Construction industry experience</h4>
@@ -319,7 +394,7 @@
 
   <footer>
     <img src="logo.png" alt="NGI Edge" style="height:44px; margin-bottom: 0.75rem;">
-    <p>Lead Conversion Systems for Contractors & Service Businesses</p>
+    <p>Lead Conversion Systems for Contractors &amp; Service Businesses</p>
     <p style="margin-top:0.5rem;"><a href="mailto:nolan@nextgeninstitute.net">nolan@nextgeninstitute.net</a></p>
     <p style="margin-top:0.35rem;"><a href="tel:+16475847612">+1 (647) 584-7612</a></p>
     <p style="margin-top:0.35rem; color:#94A3B8;">Toronto, ON, Canada</p>
@@ -337,10 +412,8 @@
       <h2>Privacy Policy</h2>
       <p><em>Last updated: May 2026</em></p>
       <p>NGI Edge ("we," "us," or "our") operates this website and provides lead conversion services. This Privacy Policy explains how we collect, use, and protect your information.</p>
-
       <h3>Information We Collect</h3>
       <p>We may collect personal information you voluntarily provide, including your name, email address, phone number, and business details when you book a call or contact us.</p>
-
       <h3>How We Use Your Information</h3>
       <ul>
         <li>To respond to your inquiries and schedule calls</li>
@@ -348,18 +421,14 @@
         <li>To send SMS or email communications related to our services</li>
         <li>To improve our website and services</li>
       </ul>
-
       <h3>SMS Communications</h3>
       <p>By providing your phone number, you consent to receive SMS messages from NGI Edge related to our services. Message and data rates may apply. You may opt out at any time by replying STOP to any message.</p>
-
       <h3>Data Sharing</h3>
       <p>We do not sell, trade, or rent your personal information to third parties. We do not buy or affiliate-market leads.</p>
-
       <h3>Data Security</h3>
       <p>We implement reasonable security measures to protect your personal information from unauthorized access or disclosure.</p>
-
       <h3>Contact Us</h3>
-      <p>For privacy-related questions, contact us at <a href="mailto:nolan@nextgeninstitute.net">nolan@nextgeninstitute.net</a> or call <a href="tel:+16475847612">+1 (647) 584-7612</a>. NGI Edge — Toronto, ON, Canada.</p>
+      <p>For privacy-related questions, contact us at <a href="mailto:nolan@nextgeninstitute.net">nolan@nextgeninstitute.net</a> or call <a href="tel:+16475847612">+1 (647) 584-7612</a>. NGI Edge, Toronto, ON, Canada.</p>
     </div>
   </div>
 
@@ -370,24 +439,18 @@
       <h2>Terms of Service</h2>
       <p><em>Last updated: May 2026</em></p>
       <p>By accessing this website or using NGI Edge services, you agree to the following terms.</p>
-
       <h3>Services</h3>
       <p>NGI Edge provides lead conversion system installation and setup services for contractors and service businesses. Service details, pricing, and scope are outlined in individual service agreements.</p>
-
       <h3>Use of Website</h3>
       <p>You agree to use this website for lawful purposes only. You may not use this site in any way that could damage, disable, or impair the site or interfere with other users.</p>
-
       <h3>Communications</h3>
       <p>By submitting your contact information, you consent to be contacted by NGI Edge via email, phone, or SMS regarding our services. You may opt out at any time by contacting us directly or replying STOP to any SMS.</p>
-
       <h3>Intellectual Property</h3>
       <p>All content on this website, including text, graphics, and logos, is the property of NGI Edge and may not be reproduced without written permission.</p>
-
       <h3>Limitation of Liability</h3>
       <p>NGI Edge is not liable for any indirect, incidental, or consequential damages arising from the use of our services or this website.</p>
-
       <h3>Contact</h3>
-      <p>Questions about these terms? Contact us at <a href="mailto:nolan@nextgeninstitute.net">nolan@nextgeninstitute.net</a> or <a href="tel:+16475847612">+1 (647) 584-7612</a>. NGI Edge — Toronto, ON, Canada.</p>
+      <p>Questions about these terms? Contact us at <a href="mailto:nolan@nextgeninstitute.net">nolan@nextgeninstitute.net</a> or <a href="tel:+16475847612">+1 (647) 584-7612</a>. NGI Edge, Toronto, ON, Canada.</p>
     </div>
   </div>
 
@@ -400,7 +463,6 @@
       document.getElementById(type + '-modal').classList.remove('active');
       document.body.style.overflow = '';
     }
-    // Close modal when clicking overlay
     document.querySelectorAll('.modal-overlay').forEach(overlay => {
       overlay.addEventListener('click', function(e) {
         if (e.target === this) {
