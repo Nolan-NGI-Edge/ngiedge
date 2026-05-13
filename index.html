@@ -107,54 +107,7 @@
     .who-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
     .who-tag { background: #fff; border: 1px solid #E2E8F0; border-radius: 100px; padding: 0.5rem 1.25rem; font-size: 0.875rem; font-weight: 500; color: #1E293B; }
 
-    /* Testimonials */
     .testimonials { background: #fff; }
-    .testimonial-card {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 14px;
-      padding: 2.5rem;
-      max-width: 700px;
-      margin-top: 3rem;
-      position: relative;
-    }
-    .testimonial-stars { display: flex; gap: 3px; margin-bottom: 1.25rem; }
-    .testimonial-stars span { color: #F59E0B; font-size: 1rem; }
-    .testimonial-text {
-      font-size: 1.05rem;
-      color: #1E293B;
-      line-height: 1.85;
-      margin-bottom: 2rem;
-      font-style: italic;
-    }
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid #E2E8F0;
-    }
-    .testimonial-logo {
-      height: 72px;
-      width: auto;
-      object-fit: contain;
-      opacity: 0.9;
-    }
-    .testimonial-divider {
-      width: 1px;
-      height: 32px;
-      background: #CBD5E1;
-    }
-    .testimonial-author-info strong {
-      display: block;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #1E293B;
-    }
-    .testimonial-author-info span {
-      font-size: 0.825rem;
-      color: #64748B;
-    }
 
     .about { background: #0C1A2E; }
     .about .section-tag { color: #85B7EB; }
@@ -183,7 +136,6 @@
     footer a:hover { text-decoration: underline; }
     .footer-links { margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
 
-    /* Privacy Policy & Terms Modal */
     .modal-overlay {
       display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0,0,0,0.7); z-index: 1000; padding: 2rem;
@@ -334,23 +286,75 @@
       <div class="section-tag">Client Results</div>
       <h2 class="section-title">What our clients are saying.</h2>
       <p class="section-body">Real results from real service businesses that installed the NGI Edge system.</p>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">
-          <span>&#9733;</span>
-          <span>&#9733;</span>
-          <span>&#9733;</span>
-          <span>&#9733;</span>
-          <span>&#9733;</span>
-        </div>
-        <p class="testimonial-text">"Before NGI Edge, we were losing jobs and didn't even know it. Leads would come in while we were on-site and by the time we got back to them, they'd already booked someone else. Now every lead gets a response instantly and we've seen a real jump in booked jobs. Honestly, it just runs."</p>
-        <div class="testimonial-author">
-          <img src="purespace-logo.png" alt="PureSpace Cleaning" class="testimonial-logo" />
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-author-info">
-            <strong>Liam Mooney</strong>
-            <span>Co-Founder, PureSpace Cleaning</span>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 2.5rem;">
+
+        <!-- Testimonial 1 — PureSpace Cleaning -->
+        <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; gap: 3px; margin-bottom: 1rem;">
+              <span style="color: #F59E0B;">&#9733;</span>
+              <span style="color: #F59E0B;">&#9733;</span>
+              <span style="color: #F59E0B;">&#9733;</span>
+              <span style="color: #F59E0B;">&#9733;</span>
+              <span style="color: #F59E0B;">&#9733;</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #1E293B; line-height: 1.75; font-style: italic; margin-bottom: 1.25rem;">"Before NGI Edge, we were losing jobs and didn't even know it. Leads would come in while we were on-site and by the time we got back to them, they'd already booked someone else. Now every lead gets a response instantly and we've seen a real jump in booked jobs. Honestly, it just runs."</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.85rem; padding-top: 1rem; border-top: 1px solid #E2E8F0;">
+            <img src="purespace-logo.png" alt="PureSpace Cleaning" style="height: 40px; width: auto; object-fit: contain; opacity: 0.9;" />
+            <div style="width: 1px; height: 28px; background: #CBD5E1;"></div>
+            <div>
+              <strong style="display: block; font-size: 0.85rem; color: #1E293B;">Liam Mooney</strong>
+              <span style="font-size: 0.8rem; color: #64748B;">Co-Founder, PureSpace Cleaning</span>
+            </div>
           </div>
         </div>
+
+        <!-- Testimonial 2 — Pressure Professors -->
+        <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; gap: 3px; margin-bottom: 1rem;">
+              <span style="color: #F59E0B;">&#9733;</span>
+              <span style="color: #F59E0B;">&#9733;</span>
+              <span style="color: #F59E0B;">&#9733;</span>
+              <span style="color: #F59E0B;">&#9733;</span>
+              <span style="color: #F59E0B;">&#9733;</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #1E293B; line-height: 1.75; font-style: italic; margin-bottom: 1.25rem;">"I wasn't sure at first because I didn't think the problem was that complicated. But when NGI Edge showed me how many requests we were getting after 6pm that just sat there until the next morning, it made sense. We set it up in a few days and I haven't had to think about it since. The system just handles it."</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.85rem; padding-top: 1rem; border-top: 1px solid #E2E8F0;">
+            <img src="PP.png" alt="Pressure Professors" style="height: 40px; width: auto; object-fit: contain; opacity: 0.9;" />
+            <div style="width: 1px; height: 28px; background: #CBD5E1;"></div>
+            <div>
+              <strong style="display: block; font-size: 0.85rem; color: #1E293B;">Alexandar Naumovski</strong>
+              <span style="font-size: 0.8rem; color: #64748B;">Owner, Pressure Professors</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 — Crestview Roofing -->
+        <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; gap: 3px; margin-bottom: 1rem;">
+              <span style="color: #F59E0B;">&#9733;</span>
+              <span style="color: #F59E0B;">&#9733;</span>
+              <span style="color: #F59E0B;">&#9733;</span>
+              <span style="color: #F59E0B;">&#9733;</span>
+              <span style="color: #F59E0B;">&#9733;</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #1E293B; line-height: 1.75; font-style: italic; margin-bottom: 1.25rem;">"I figured I was losing some leads here and there. I didn't realize how much was slipping through until I was actually shown the numbers. First week the system was live, I booked a $14,200 job from a lead that came in at 9pm on a Sunday. Never would have had that before."</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.85rem; padding-top: 1rem; border-top: 1px solid #E2E8F0;">
+            <img src="CR.png" alt="Crestview Roofing" style="height: 40px; width: auto; object-fit: contain; opacity: 0.9;" />
+            <div style="width: 1px; height: 28px; background: #CBD5E1;"></div>
+            <div>
+              <strong style="display: block; font-size: 0.85rem; color: #1E293B;">Mike T.</strong>
+              <span style="font-size: 0.8rem; color: #64748B;">Owner, Crestview Roofing</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
