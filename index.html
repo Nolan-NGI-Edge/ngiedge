@@ -4,7 +4,7 @@
   <meta property="og:image" content="https://edge.nextgeninstitute.net/logo.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NGI Edge — Lead Conversion Systems for Contractors</title>
+  <title>NGI Edge</title>
   <meta name="description" content="NGI Edge installs done-for-you lead conversion systems for contractors and service businesses. Instant response, automated follow-up, more booked jobs." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,10 +38,36 @@
     }
     .nav-cta:hover { background: #2570C0; }
 
+    /* ─── SERVICE TABS ─── */
+    .service-tabs-bar {
+      position: fixed; top: 64px; left: 0; right: 0;
+      background: rgba(12,26,46,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(55,138,221,0.2);
+      display: flex; justify-content: center;
+      z-index: 99;
+    }
+    .service-tab {
+      padding: 0.75rem 2rem;
+      font-size: 0.875rem; font-weight: 500;
+      color: #85B7EB;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .service-tab:hover { color: #fff; }
+    .service-tab.active { color: #fff; border-bottom-color: #378ADD; }
+
+    /* ─── PAGE VISIBILITY ─── */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ─── HERO ─── */
     .hero {
       background: #0C1A2E; min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
-      text-align: center; padding: 8rem 2rem 6rem; position: relative; overflow: hidden;
+      text-align: center; padding: 9.5rem 2rem 6rem; position: relative; overflow: hidden;
     }
     .hero::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
@@ -66,6 +92,15 @@
     .hero-cta:hover { background: #2570C0; }
     .hero-sub { margin-top: 1rem; font-size: 0.825rem; color: #94A3B8; }
     .hero-accent { width: 60px; height: 2px; background: #378ADD; margin: 3rem auto 0; }
+
+    /* Growth hero variant */
+    .hero-growth::before {
+      background: radial-gradient(ellipse at 50% 0%, rgba(55,138,221,0.15) 0%, transparent 65%);
+    }
+    .hero-growth .hero-badge {
+      background: rgba(55,138,221,0.15);
+      border-color: rgba(55,138,221,0.4);
+    }
 
     .stats {
       background: #112240; padding: 3rem 2rem;
@@ -137,6 +172,40 @@
     footer a:hover { text-decoration: underline; }
     .footer-links { margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
 
+    /* ─── GROWTH SYSTEM SPECIFIC STYLES ─── */
+    .growth-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .growth-pillar { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.75rem; }
+    .pillar-icon { width: 44px; height: 44px; background: rgba(55,138,221,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.2rem; }
+    .growth-pillar h3 { font-size: 1rem; font-weight: 600; color: #1E293B; margin-bottom: 0.5rem; }
+    .growth-pillar p { font-size: 0.875rem; color: #64748B; line-height: 1.6; }
+
+    .growth-includes { background: #0C1A2E; border-radius: 12px; padding: 2.5rem; margin-top: 3rem; }
+    .growth-includes h3 { font-size: 1rem; font-weight: 600; color: #85B7EB; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; }
+    .includes-item { display: flex; align-items: flex-start; gap: 0.75rem; }
+    .includes-item::before { content: '→'; color: #378ADD; font-size: 0.9rem; flex-shrink: 0; line-height: 1.6; }
+    .includes-item span { font-size: 0.875rem; color: #CBD5E1; line-height: 1.6; }
+
+    .pricing-card { background: #112240; border: 1px solid rgba(55,138,221,0.3); border-radius: 16px; padding: 2.5rem; margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+    .pricing-left h3 { font-size: 1.75rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+    .pricing-left p { font-size: 0.95rem; color: #85B7EB; line-height: 1.7; }
+    .pricing-right { text-align: center; }
+    .price-amount { font-size: 2.5rem; font-weight: 700; color: #378ADD; display: block; }
+    .price-period { font-size: 0.875rem; color: #85B7EB; margin-top: 0.25rem; display: block; }
+    .price-note { font-size: 0.8rem; color: #64748B; margin-top: 1rem; }
+
+    .comparison-table { width: 100%; border-collapse: collapse; margin-top: 2.5rem; }
+    .comparison-table th { padding: 1rem 1.25rem; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+    .comparison-table th:first-child { text-align: left; color: #64748B; }
+    .comparison-table th:not(:first-child) { text-align: center; background: #F8FAFC; color: #1E293B; }
+    .comparison-table th.highlight { background: #0C1A2E; color: #85B7EB; border-radius: 8px 8px 0 0; }
+    .comparison-table td { padding: 0.85rem 1.25rem; font-size: 0.9rem; border-bottom: 1px solid #E2E8F0; }
+    .comparison-table td:first-child { color: #475569; }
+    .comparison-table td:not(:first-child) { text-align: center; }
+    .comparison-table td.highlight-col { background: rgba(12,26,46,0.04); }
+    .check { color: #22C55E; font-size: 1.1rem; }
+    .cross { color: #CBD5E1; font-size: 1rem; }
+
     .modal-overlay {
       display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0,0,0,0.7); z-index: 1000; padding: 2rem;
@@ -161,8 +230,12 @@
     @media (max-width: 600px) {
       nav { padding: 0 1rem; }
       section { padding: 4rem 1.25rem; }
-      .hero { padding: 7rem 1.25rem 5rem; }
+      .hero { padding: 8.5rem 1.25rem 5rem; }
       .stats { padding: 2.5rem 1.25rem; }
+      .service-tab { padding: 0.75rem 1.25rem; font-size: 0.8rem; }
+      .pricing-card { grid-template-columns: 1fr; text-align: center; }
+      .comparison-table { font-size: 0.8rem; }
+      .comparison-table th, .comparison-table td { padding: 0.65rem 0.75rem; }
     }
   </style>
 </head>
@@ -173,229 +246,808 @@
     <a href="https://calendly.com/nolan-nextgeninstitute/30min" target="_blank" class="nav-cta">Book a Free Call</a>
   </nav>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-badge">Lead Conversion Systems for Contractors</div>
-      <h1>Give Your Business the <span>Edge</span> on Every Inbound Lead</h1>
-      <p>NGI Edge installs a done-for-you lead conversion system for contractors and service businesses. Instant response, automated follow-up, more booked jobs. Live in under a week.</p>
-      <a href="https://calendly.com/nolan-nextgeninstitute/30min" target="_blank" class="hero-cta">Book a Free 15-Min Call</a>
-      <p class="hero-sub">No pitch. No pressure. Just a clear picture of what's leaking.</p>
-      <div class="hero-accent"></div>
-    </div>
-  </section>
-
-  <div class="stats">
-    <div class="stats-inner">
-      <div>
-        <span class="stat-number">9x</span>
-        <div class="stat-label">More likely to convert when contacted within 5 minutes</div>
-      </div>
-      <div>
-        <span class="stat-number">80%</span>
-        <div class="stat-label">Of sales happen after the first follow-up. Most never send one.</div>
-      </div>
-      <div>
-        <span class="stat-number">5 days</span>
-        <div class="stat-label">Average time to install your complete system</div>
-      </div>
-    </div>
+  <!-- Service Tab Bar -->
+  <div class="service-tabs-bar">
+    <div class="service-tab active" onclick="switchTab('lead-conversion')">Lead Conversion System</div>
+    <div class="service-tab" onclick="switchTab('growth-system')">Full Growth System</div>
   </div>
 
-  <section class="problem">
-    <div class="section-inner">
-      <div class="section-tag">The Problem</div>
-      <h2 class="section-title">The leads are not the problem.</h2>
-      <p class="section-body">Most service businesses generate enough inbound interest. The problem is what happens next. Missed calls, slow replies, and zero follow-up. Jobs go to whoever responded first.</p>
-      <div class="problem-grid">
-        <div class="problem-card">
-          <div class="problem-icon">📵</div>
-          <h3>Missed calls go nowhere</h3>
-          <p>A lead calls while you're on a job. No callback happens. They move on within minutes.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">⏱</div>
-          <h3>Slow replies lose jobs</h3>
-          <p>A form comes in and you see it hours later. By then they've already booked a competitor.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">🔇</div>
-          <h3>No follow-up system</h3>
-          <p>You follow up once, get no reply, and move on. That lead needed one more touch to convert.</p>
-        </div>
-      </div>
-      <div class="stat-callout">
-        <p>A lead contacted within <strong>5 minutes</strong> is <strong>9x more likely to convert</strong> than one contacted after 30 minutes. Most service businesses respond in hours, if at all.</p>
-      </div>
-    </div>
-  </section>
+  <!-- ════════════════════════════════════════════
+       PAGE 1: LEAD CONVERSION SYSTEM
+  ════════════════════════════════════════════ -->
+  <div id="page-lead-conversion" class="page active">
 
-  <section class="solution">
-    <div class="section-inner">
-      <div class="section-tag">What We Install</div>
-      <h2 class="section-title">A complete system. Installed in under a week.</h2>
-      <p class="section-body">Every component works together to make sure no lead slips through, from first contact to booked job.</p>
-      <div class="steps">
-        <div class="step">
-          <div class="step-accent"></div>
-          <div class="step-number">01</div>
-          <h3>Instant Lead Response</h3>
-          <p>Every inbound lead receives an SMS within 30 seconds. Missed call, website form, ad lead. All covered automatically.</p>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-badge">Lead Conversion Systems for Contractors</div>
+        <h1>Give Your Business the <span>Edge</span> on Every Inbound Lead</h1>
+        <p>NGI Edge installs a done-for-you lead conversion system for contractors and service businesses. Instant response, automated follow-up, more booked jobs. Live in under a week.</p>
+        <a href="https://calendly.com/nolan-nextgeninstitute/30min" target="_blank" class="hero-cta">Book a Free 15-Min Call</a>
+        <p class="hero-sub">No pitch. No pressure. Just a clear picture of what's leaking.</p>
+        <div class="hero-accent"></div>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="stats-inner">
+        <div>
+          <span class="stat-number">9x</span>
+          <div class="stat-label">More likely to convert when contacted within 5 minutes</div>
         </div>
-        <div class="step">
-          <div class="step-accent"></div>
-          <div class="step-number">02</div>
-          <h3>Automatic Qualification</h3>
-          <p>A short automated conversation gathers key information before you spend a minute on the phone.</p>
+        <div>
+          <span class="stat-number">80%</span>
+          <div class="stat-label">Of sales happen after the first follow-up. Most never send one.</div>
         </div>
-        <div class="step">
-          <div class="step-accent"></div>
-          <div class="step-number">03</div>
-          <h3>Follow-Up Engine</h3>
-          <p>3 to 5 automated touchpoints until they respond or book. Stops automatically when they reply.</p>
-        </div>
-        <div class="step">
-          <div class="step-accent"></div>
-          <div class="step-number">04</div>
-          <h3>Booking System</h3>
-          <p>Leads book directly into your calendar. You show up. You close the job.</p>
+        <div>
+          <span class="stat-number">5 days</span>
+          <div class="stat-label">Average time to install your complete system</div>
         </div>
       </div>
     </div>
-  </section>
 
-  <section class="who">
-    <div class="section-inner">
-      <div class="section-tag">Who It's For</div>
-      <h2 class="section-title">Built for contractors and service businesses doing $500K to $3M per year.</h2>
-      <p class="section-body">If you have inbound leads and a team that responds to them, we can make that process faster, more consistent, and more profitable.</p>
-      <div class="who-tags">
-        <span class="who-tag">General Contractors</span>
-        <span class="who-tag">Renovation Companies</span>
-        <span class="who-tag">HVAC</span>
-        <span class="who-tag">Roofing</span>
-        <span class="who-tag">Plumbing</span>
-        <span class="who-tag">Restoration</span>
-        <span class="who-tag">Foundation &amp; Excavation</span>
-        <span class="who-tag">Specialty Trades</span>
-        <span class="who-tag">Home Services</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonials">
-    <div class="section-inner">
-      <div class="section-tag">Client Results</div>
-      <h2 class="section-title">What our clients are saying.</h2>
-      <p class="section-body">Real results from real service businesses that installed the NGI Edge system.</p>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 2.5rem;">
-
-        <!-- Testimonial 1 — PureSpace Cleaning -->
-        <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; gap: 3px; margin-bottom: 1rem;">
-              <span style="color: #F59E0B;">&#9733;</span>
-              <span style="color: #F59E0B;">&#9733;</span>
-              <span style="color: #F59E0B;">&#9733;</span>
-              <span style="color: #F59E0B;">&#9733;</span>
-              <span style="color: #F59E0B;">&#9733;</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #1E293B; line-height: 1.75; font-style: italic; margin-bottom: 1.25rem;">"Before NGI Edge, we were losing jobs and didn't even know it. Leads would come in while we were on-site and by the time we got back to them, they'd already booked someone else. Now every lead gets a response instantly and we've seen a real jump in booked jobs. Honestly, it just runs."</p>
+    <section class="problem">
+      <div class="section-inner">
+        <div class="section-tag">The Problem</div>
+        <h2 class="section-title">The leads are not the problem.</h2>
+        <p class="section-body">Most service businesses generate enough inbound interest. The problem is what happens next. Missed calls, slow replies, and zero follow-up. Jobs go to whoever responded first.</p>
+        <div class="problem-grid">
+          <div class="problem-card">
+            <div class="problem-icon">📵</div>
+            <h3>Missed calls go nowhere</h3>
+            <p>A lead calls while you're on a job. No callback happens. They move on within minutes.</p>
           </div>
-          <div style="display: flex; align-items: center; gap: 0.85rem; padding-top: 1rem; border-top: 1px solid #E2E8F0;">
-            <img src="purespace-logo.png" alt="PureSpace Cleaning" style="height: 40px; width: auto; object-fit: contain; opacity: 0.9;" />
-            <div style="width: 1px; height: 28px; background: #CBD5E1;"></div>
+          <div class="problem-card">
+            <div class="problem-icon">⏱</div>
+            <h3>Slow replies lose jobs</h3>
+            <p>A form comes in and you see it hours later. By then they've already booked a competitor.</p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon">🔇</div>
+            <h3>No follow-up system</h3>
+            <p>You follow up once, get no reply, and move on. That lead needed one more touch to convert.</p>
+          </div>
+        </div>
+        <div class="stat-callout">
+          <p>A lead contacted within <strong>5 minutes</strong> is <strong>9x more likely to convert</strong> than one contacted after 30 minutes. Most service businesses respond in hours, if at all.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="solution">
+      <div class="section-inner">
+        <div class="section-tag">What We Install</div>
+        <h2 class="section-title">A complete system. Installed in under a week.</h2>
+        <p class="section-body">Every component works together to make sure no lead slips through, from first contact to booked job.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-accent"></div>
+            <div class="step-number">01</div>
+            <h3>Instant Lead Response</h3>
+            <p>Every inbound lead receives an SMS within 30 seconds. Missed call, website form, ad lead. All covered automatically.</p>
+          </div>
+          <div class="step">
+            <div class="step-accent"></div>
+            <div class="step-number">02</div>
+            <h3>Automatic Qualification</h3>
+            <p>A short automated conversation gathers key information before you spend a minute on the phone.</p>
+          </div>
+          <div class="step">
+            <div class="step-accent"></div>
+            <div class="step-number">03</div>
+            <h3>Follow-Up Engine</h3>
+            <p>3 to 5 automated touchpoints until they respond or book. Stops automatically when they reply.</p>
+          </div>
+          <div class="step">
+            <div class="step-accent"></div>
+            <div class="step-number">04</div>
+            <h3>Booking System</h3>
+            <p>Leads book directly into your calendar. You show up. You close the job.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="who">
+      <div class="section-inner">
+        <div class="section-tag">Who It's For</div>
+        <h2 class="section-title">Built for contractors and service businesses doing $500K to $3M per year.</h2>
+        <p class="section-body">If you have inbound leads and a team that responds to them, we can make that process faster, more consistent, and more profitable.</p>
+        <div class="who-tags">
+          <span class="who-tag">General Contractors</span>
+          <span class="who-tag">Renovation Companies</span>
+          <span class="who-tag">HVAC</span>
+          <span class="who-tag">Roofing</span>
+          <span class="who-tag">Plumbing</span>
+          <span class="who-tag">Restoration</span>
+          <span class="who-tag">Foundation &amp; Excavation</span>
+          <span class="who-tag">Specialty Trades</span>
+          <span class="who-tag">Home Services</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="section-inner">
+        <div class="section-tag">Client Results</div>
+        <h2 class="section-title">What our clients are saying.</h2>
+        <p class="section-body">Real results from real service businesses that installed the NGI Edge system.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 2.5rem;">
+          <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-              <strong style="display: block; font-size: 0.85rem; color: #1E293B;">Liam Mooney</strong>
-              <span style="font-size: 0.8rem; color: #64748B;">Co-Founder, PureSpace Cleaning</span>
+              <div style="display: flex; gap: 3px; margin-bottom: 1rem;">
+                <span style="color: #F59E0B;">&#9733;</span><span style="color: #F59E0B;">&#9733;</span><span style="color: #F59E0B;">&#9733;</span><span style="color: #F59E0B;">&#9733;</span><span style="color: #F59E0B;">&#9733;</span>
+              </div>
+              <p style="font-size: 0.9rem; color: #1E293B; line-height: 1.75; font-style: italic; margin-bottom: 1.25rem;">"Before NGI Edge, we were losing jobs and didn't even know it. Leads would come in while we were on-site and by the time we got back to them, they'd already booked someone else. Now every lead gets a response instantly and we've seen a real jump in booked jobs. Honestly, it just runs."</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.85rem; padding-top: 1rem; border-top: 1px solid #E2E8F0;">
+              <img src="purespace-logo.png" alt="PureSpace Cleaning" style="height: 40px; width: auto; object-fit: contain; opacity: 0.9;" />
+              <div style="width: 1px; height: 28px; background: #CBD5E1;"></div>
+              <div>
+                <strong style="display: block; font-size: 0.85rem; color: #1E293B;">Liam Mooney</strong>
+                <span style="font-size: 0.8rem; color: #64748B;">Co-Founder, PureSpace Cleaning</span>
+              </div>
             </div>
           </div>
-        </div>
-
-        <!-- Testimonial 2 — Pressure Professors -->
-        <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; gap: 3px; margin-bottom: 1rem;">
-              <span style="color: #F59E0B;">&#9733;</span>
-              <span style="color: #F59E0B;">&#9733;</span>
-              <span style="color: #F59E0B;">&#9733;</span>
-              <span style="color: #F59E0B;">&#9733;</span>
-              <span style="color: #F59E0B;">&#9733;</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #1E293B; line-height: 1.75; font-style: italic; margin-bottom: 1.25rem;">"I wasn't sure at first because I didn't think the problem was that complicated. But when NGI Edge showed me how many requests we were getting after 6pm that just sat there until the next morning, it made sense. We set it up in a few days and I haven't had to think about it since. The system just handles it."</p>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.85rem; padding-top: 1rem; border-top: 1px solid #E2E8F0;">
-            <img src="PP.png" alt="Pressure Professors" style="height: 40px; width: auto; object-fit: contain; opacity: 0.9;" />
-            <div style="width: 1px; height: 28px; background: #CBD5E1;"></div>
+          <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-              <strong style="display: block; font-size: 0.85rem; color: #1E293B;">Alexandar Naumovski</strong>
-              <span style="font-size: 0.8rem; color: #64748B;">Owner, Pressure Professors</span>
+              <div style="display: flex; gap: 3px; margin-bottom: 1rem;">
+                <span style="color: #F59E0B;">&#9733;</span><span style="color: #F59E0B;">&#9733;</span><span style="color: #F59E0B;">&#9733;</span><span style="color: #F59E0B;">&#9733;</span><span style="color: #F59E0B;">&#9733;</span>
+              </div>
+              <p style="font-size: 0.9rem; color: #1E293B; line-height: 1.75; font-style: italic; margin-bottom: 1.25rem;">"I wasn't sure at first because I didn't think the problem was that complicated. But when NGI Edge showed me how many requests we were getting after 6pm that just sat there until the next morning, it made sense. We set it up in a few days and I haven't had to think about it since. The system just handles it."</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.85rem; padding-top: 1rem; border-top: 1px solid #E2E8F0;">
+              <img src="PP.png" alt="Pressure Professors" style="height: 40px; width: auto; object-fit: contain; opacity: 0.9;" />
+              <div style="width: 1px; height: 28px; background: #CBD5E1;"></div>
+              <div>
+                <strong style="display: block; font-size: 0.85rem; color: #1E293B;">Alexandar Naumovski</strong>
+                <span style="font-size: 0.8rem; color: #64748B;">Owner, Pressure Professors</span>
+              </div>
             </div>
           </div>
-        </div>
-
-        <!-- Testimonial 3 — Crestview Roofing -->
-        <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; gap: 3px; margin-bottom: 1rem;">
-              <span style="color: #F59E0B;">&#9733;</span>
-              <span style="color: #F59E0B;">&#9733;</span>
-              <span style="color: #F59E0B;">&#9733;</span>
-              <span style="color: #F59E0B;">&#9733;</span>
-              <span style="color: #F59E0B;">&#9733;</span>
-            </div>
-            <p style="font-size: 0.9rem; color: #1E293B; line-height: 1.75; font-style: italic; margin-bottom: 1.25rem;">"I figured I was losing some leads here and there. I didn't realize how much was slipping through until I was actually shown the numbers. First week the system was live, I booked a $14,200 job from a lead that came in at 9pm on a Sunday. Never would have had that before."</p>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.85rem; padding-top: 1rem; border-top: 1px solid #E2E8F0;">
-            <img src="CR.png" alt="Crestview Roofing" style="height: 40px; width: auto; object-fit: contain; opacity: 0.9;" />
-            <div style="width: 1px; height: 28px; background: #CBD5E1;"></div>
+          <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-              <strong style="display: block; font-size: 0.85rem; color: #1E293B;">Mike T.</strong>
-              <span style="font-size: 0.8rem; color: #64748B;">Owner, Crestview Roofing</span>
+              <div style="display: flex; gap: 3px; margin-bottom: 1rem;">
+                <span style="color: #F59E0B;">&#9733;</span><span style="color: #F59E0B;">&#9733;</span><span style="color: #F59E0B;">&#9733;</span><span style="color: #F59E0B;">&#9733;</span><span style="color: #F59E0B;">&#9733;</span>
+              </div>
+              <p style="font-size: 0.9rem; color: #1E293B; line-height: 1.75; font-style: italic; margin-bottom: 1.25rem;">"I figured I was losing some leads here and there. I didn't realize how much was slipping through until I was actually shown the numbers. First week the system was live, I booked a $14,200 job from a lead that came in at 9pm on a Sunday. Never would have had that before."</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.85rem; padding-top: 1rem; border-top: 1px solid #E2E8F0;">
+              <img src="CR.png" alt="Crestview Roofing" style="height: 40px; width: auto; object-fit: contain; opacity: 0.9;" />
+              <div style="width: 1px; height: 28px; background: #CBD5E1;"></div>
+              <div>
+                <strong style="display: block; font-size: 0.85rem; color: #1E293B;">Mike T.</strong>
+                <span style="font-size: 0.8rem; color: #64748B;">Owner, Crestview Roofing</span>
+              </div>
             </div>
           </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="about">
-    <div class="section-inner">
-      <div class="section-tag">About NGI Edge</div>
-      <h2 class="section-title">Built by engineers. Measured by booked jobs.</h2>
-      <p class="about-body">NGI Edge is run by Nolan Campbell, mechanical engineer and construction industry consultant. We think in workflows, inputs, and outcomes. Not buzzwords and vanity metrics.</p>
-      <p class="about-body">Every system we install is built to produce one result: more booked jobs from the leads you're already getting. No jargon. No complex software to learn. We install it, you run your business.</p>
-      <div class="about-points">
-        <div class="about-point">
-          <h4>Engineering background</h4>
-          <p>Systems thinking applied to your business. Not generic marketing tactics.</p>
-        </div>
-        <div class="about-point">
-          <h4>Construction industry experience</h4>
-          <p>We understand how contractors work. No learning curve on our end.</p>
-        </div>
-        <div class="about-point">
-          <h4>Installed in under a week</h4>
-          <p>No lengthy onboarding. No disruption to how you work.</p>
-        </div>
-        <div class="about-point">
-          <h4>Measured by results</h4>
-          <p>We track conversations started, leads converted, and jobs booked.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="cta-section">
-    <div class="section-inner">
-      <div class="section-tag">Get Started</div>
-      <h2 class="section-title">Ready to stop losing jobs to slow response times?</h2>
-      <p>Book a free 15-minute call. We'll look at your current lead process and show you exactly where jobs are slipping through.</p>
-      <a href="https://calendly.com/nolan-nextgeninstitute/30min" target="_blank" class="cta-main">Book Your Free Call</a>
-      <span class="cta-note">No pitch. No pressure. Free 15-minute conversation.</span>
+    <section class="about">
+      <div class="section-inner">
+        <div class="section-tag">About NGI Edge</div>
+        <h2 class="section-title">Built by engineers. Measured by booked jobs.</h2>
+        <p class="about-body">NGI Edge is run by Nolan Campbell, mechanical engineer and construction industry consultant. We think in workflows, inputs, and outcomes. Not buzzwords and vanity metrics.</p>
+        <p class="about-body">Every system we install is built to produce one result: more booked jobs from the leads you're already getting. No jargon. No complex software to learn. We install it, you run your business.</p>
+        <div class="about-points">
+          <div class="about-point"><h4>Engineering background</h4><p>Systems thinking applied to your business. Not generic marketing tactics.</p></div>
+          <div class="about-point"><h4>Construction industry experience</h4><p>We understand how contractors work. No learning curve on our end.</p></div>
+          <div class="about-point"><h4>Installed in under a week</h4><p>No lengthy onboarding. No disruption to how you work.</p></div>
+          <div class="about-point"><h4>Measured by results</h4><p>We track conversations started, leads converted, and jobs booked.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="section-inner">
+        <div class="section-tag">Get Started</div>
+        <h2 class="section-title">Ready to stop losing jobs to slow response times?</h2>
+        <p>Book a free 15-minute call. We'll look at your current lead process and show you exactly where jobs are slipping through.</p>
+        <a href="https://calendly.com/nolan-nextgeninstitute/30min" target="_blank" class="cta-main">Book Your Free Call</a>
+        <span class="cta-note">No pitch. No pressure. Free 15-minute conversation.</span>
+      </div>
+    </section>
+
+  </div><!-- end page-lead-conversion -->
+
+
+  <!-- ════════════════════════════════════════════
+       PAGE 2: FULL GROWTH SYSTEM
+  ════════════════════════════════════════════ -->
+  <div id="page-growth-system" class="page">
+
+    <section class="hero hero-growth">
+      <div class="hero-inner">
+        <div class="hero-badge">Full Growth System for Ambitious Service Businesses</div>
+        <h1>Your Business Deserves a <span>Complete Growth Engine</span></h1>
+        <p>Stop patching individual problems. NGI Edge builds the complete infrastructure behind your business: lead generation, conversion, CRM, automation, and ongoing optimization in one integrated system.</p>
+        <a href="https://calendly.com/nolan-nextgeninstitute/30min" target="_blank" class="hero-cta">Book a Strategy Call</a>
+        <p class="hero-sub">Free 30-minute call. We'll map out exactly what your growth system would look like.</p>
+        <div class="hero-accent"></div>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="stats-inner">
+        <div>
+          <span class="stat-number">ROI-first</span>
+          <div class="stat-label">Scoped to your business. Priced to perform.</div>
+        </div>
+        <div>
+          <span class="stat-number">End-to-end</span>
+          <div class="stat-label">From first ad impression to repeat customer, all in one system</div>
+        </div>
+        <div>
+          <span class="stat-number">1 partner</span>
+          <div class="stat-label">One team. No agency juggling. No dropped balls between vendors.</div>
+        </div>
+      </div>
     </div>
-  </section>
+
+    <section class="problem">
+      <div class="section-inner">
+        <div class="section-tag">The Limitation</div>
+        <h2 class="section-title">Lead conversion is the start. Not the whole game.</h2>
+        <p class="section-body">You've plugged the leaks. Leads get responded to. Jobs are getting booked. Now the question is: how do you scale? Most contractors hit a ceiling because their growth infrastructure is stitched together: a Google Ads agency here, a part-time admin there, no unified system tracking what's actually working.</p>
+        <div class="problem-grid">
+          <div class="problem-card">
+            <div class="problem-icon">📊</div>
+            <h3>No visibility into what's driving revenue</h3>
+            <p>You're spending on ads but can't tell which campaigns, which keywords, or which channels are actually producing jobs.</p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon">🔁</div>
+            <h3>Past customers go cold</h3>
+            <p>Your best leads are people who already hired you. Most contractors never run a single re-engagement campaign.</p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon">🧩</div>
+            <h3>Disconnected vendors, no single system</h3>
+            <p>Three agencies, two tools, and nobody has full picture. Things fall through. Accountability gets diffused.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="solution">
+      <div class="section-inner">
+        <div class="section-tag">What We Build</div>
+        <h2 class="section-title">A predictable system that generates opportunities, converts them, and retains customers.</h2>
+        <p class="section-body">The Growth System combines every component your business needs to scale, built and managed by one team with full visibility across all of it.</p>
+
+        <div class="growth-pillars">
+          <div class="growth-pillar">
+            <div class="pillar-icon">📣</div>
+            <h3>Lead Generation</h3>
+            <p>Google Ads, Meta Ads, and referral systems built and managed to bring inbound opportunities consistently. Not just when you get lucky.</p>
+          </div>
+          <div class="growth-pillar">
+            <div class="pillar-icon">⚡</div>
+            <h3>Lead Conversion</h3>
+            <p>The full missed call text-back, qualification, follow-up, and booking system (the same foundation from the Lead Conversion offer) included and running.</p>
+          </div>
+          <div class="growth-pillar">
+            <div class="pillar-icon">🗂️</div>
+            <h3>CRM Management</h3>
+            <p>Every lead, every conversation, every stage tracked in one place. No more guessing who needs a follow-up or where a job fell off.</p>
+          </div>
+          <div class="growth-pillar">
+            <div class="pillar-icon">⭐</div>
+            <h3>Reputation Management</h3>
+            <p>Automated review requests sent at the right moment. More Google reviews, better ranking, more inbound trust. On autopilot.</p>
+          </div>
+          <div class="growth-pillar">
+            <div class="pillar-icon">🔄</div>
+            <h3>Re-engagement Campaigns</h3>
+            <p>Your past customers are warm leads. Automated sequences bring them back for repeat jobs and referrals, without any manual effort.</p>
+          </div>
+          <div class="growth-pillar">
+            <div class="pillar-icon">📈</div>
+            <h3>Reporting & Optimization</h3>
+            <p>A live dashboard showing what's generating revenue and what isn't. Monthly review, ongoing optimization. You make decisions with data.</p>
+          </div>
+        </div>
+
+        <div class="growth-includes">
+          <h3>Everything that's included</h3>
+          <div class="includes-grid">
+            <div class="includes-item"><span>Google Ads management</span></div>
+            <div class="includes-item"><span>Meta Ads management</span></div>
+            <div class="includes-item"><span>Referral system setup</span></div>
+            <div class="includes-item"><span>Missed call text-back</span></div>
+            <div class="includes-item"><span>Lead nurturing sequences</span></div>
+            <div class="includes-item"><span>Automated qualification</span></div>
+            <div class="includes-item"><span>Calendar booking system</span></div>
+            <div class="includes-item"><span>CRM pipeline management</span></div>
+            <div class="includes-item"><span>Appointment reminders</span></div>
+            <div class="includes-item"><span>Review generation</span></div>
+            <div class="includes-item"><span>Past customer re-engagement</span></div>
+            <div class="includes-item"><span>KPI reporting dashboard</span></div>
+            <div class="includes-item"><span>Monthly strategy review</span></div>
+            <div class="includes-item"><span>Continuous optimization</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: #F8FAFC; padding: 6rem 2rem;">
+      <div class="section-inner">
+        <div class="section-tag">Investment</div>
+        <h2 class="section-title">Built to pay for itself.</h2>
+        <p class="section-body">The Growth System is scoped to your business and priced on a strategy call. What we can tell you upfront: it is designed to generate a return that covers its own cost. A single additional job per month in most trades does exactly that.</p>
+
+        <div class="pricing-card">
+          <div class="pricing-left">
+            <h3>Performance-first pricing</h3>
+            <p>We scope every engagement around what your business actually needs and what results we can commit to. Pricing is confirmed on the strategy call after we understand your current volume, trade, and goals.</p>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #64748B;">The system is backed by a performance guarantee. If it does not generate measurable results in the first 30 days, you do not pay for setup. We only win when you win.</p>
+          </div>
+          <div class="pricing-right">
+            <span class="price-amount" style="font-size: 1.5rem; color: #85B7EB;">Scoped on call</span>
+            <span class="price-period">Guaranteed to perform or your setup is refunded</span>
+            <a href="https://calendly.com/nolan-nextgeninstitute/30min" target="_blank" style="display: inline-block; margin-top: 1.5rem; background: #378ADD; color: #fff; padding: 0.75rem 1.75rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Book a Strategy Call</a>
+            <p class="price-note">Free 30-minute call. No obligation.</p>
+          </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <h3 style="font-size: 1rem; font-weight: 600; color: #1E293B; margin-top: 3rem; margin-bottom: 0.25rem;">How it compares</h3>
+        <p style="font-size: 0.875rem; color: #64748B; margin-bottom: 0.5rem;">Lead Conversion vs. Full Growth System: what is included in each.</p>
+        <div style="overflow-x: auto;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Lead Conversion</th>
+                <th class="highlight">Full Growth System</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Missed call text-back</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Automated lead follow-up</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Lead qualification workflow</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Calendar booking integration</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>CRM pipeline</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Google Ads management</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Meta Ads management</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Reputation and review generation</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Past customer re-engagement</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Appointment reminder sequences</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>KPI reporting dashboard</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Monthly strategy review</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Ongoing optimization</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="section-inner">
+        <div class="section-tag">About NGI Edge</div>
+        <h2 class="section-title">Built by engineers. Measured by booked jobs.</h2>
+        <p class="about-body">NGI Edge is run by Nolan Campbell, mechanical engineer and construction industry consultant. We think in workflows, inputs, and outcomes. Not buzzwords and vanity metrics.</p>
+        <p class="about-body">Every system we install is built to produce one result: more booked jobs from the leads you're already getting. No jargon. No complex software to learn. We install it, you run your business.</p>
+        <div class="about-points">
+          <div class="about-point"><h4>Engineering background</h4><p>Systems thinking applied to your business. Not generic marketing tactics.</p></div>
+          <div class="about-point"><h4>Construction industry experience</h4><p>We understand how contractors work. No learning curve on our end.</p></div>
+          <div class="about-point"><h4>Installed in under a week</h4><p>No lengthy onboarding. No disruption to how you work.</p></div>
+          <div class="about-point"><h4>Measured by results</h4><p>We track conversations started, leads converted, and jobs booked.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="section-inner">
+        <div class="section-tag">Get Started</div>
+        <h2 class="section-title">Ready to stop losing jobs to slow response times?</h2>
+        <p>Book a free 15-minute call. We'll look at your current lead process and show you exactly where jobs are slipping through.</p>
+        <a href="https://calendly.com/nolan-nextgeninstitute/30min" target="_blank" class="cta-main">Book Your Free Call</a>
+        <span class="cta-note">No pitch. No pressure. Free 15-minute conversation.</span>
+      </div>
+    </section>
+
+  </div><!-- end page-lead-conversion -->
+
+
+  <!-- ════════════════════════════════════════════
+       PAGE 2: FULL GROWTH SYSTEM
+  ════════════════════════════════════════════ -->
+  <div id="page-growth-system" class="page">
+
+    <section class="hero hero-growth">
+      <div class="hero-inner">
+        <div class="hero-badge">Full Growth System for Ambitious Service Businesses</div>
+        <h1>Your Business Deserves a <span>Complete Growth Engine</span></h1>
+        <p>Stop patching individual problems. NGI Edge builds the complete infrastructure behind your business: lead generation, conversion, CRM, automation, and ongoing optimization in one integrated system.</p>
+        <a href="https://calendly.com/nolan-nextgeninstitute/30min" target="_blank" class="hero-cta">Book a Strategy Call</a>
+        <p class="hero-sub">Free 30-minute call. We'll map out exactly what your growth system would look like.</p>
+        <div class="hero-accent"></div>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="stats-inner">
+        <div>
+          <span class="stat-number">ROI-first</span>
+          <div class="stat-label">Scoped to your business. Priced to perform.</div>
+        </div>
+        <div>
+          <span class="stat-number">End-to-end</span>
+          <div class="stat-label">From first ad impression to repeat customer, all in one system</div>
+        </div>
+        <div>
+          <span class="stat-number">1 partner</span>
+          <div class="stat-label">One team. No agency juggling. No dropped balls between vendors.</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="problem">
+      <div class="section-inner">
+        <div class="section-tag">The Limitation</div>
+        <h2 class="section-title">Lead conversion is the start. Not the whole game.</h2>
+        <p class="section-body">You've plugged the leaks. Leads get responded to. Jobs are getting booked. Now the question is: how do you scale? Most contractors hit a ceiling because their growth infrastructure is stitched together: a Google Ads agency here, a part-time admin there, no unified system tracking what's actually working.</p>
+        <div class="problem-grid">
+          <div class="problem-card">
+            <div class="problem-icon">📊</div>
+            <h3>No visibility into what's driving revenue</h3>
+            <p>You're spending on ads but can't tell which campaigns, which keywords, or which channels are actually producing jobs.</p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon">🔁</div>
+            <h3>Past customers go cold</h3>
+            <p>Your best leads are people who already hired you. Most contractors never run a single re-engagement campaign.</p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon">🧩</div>
+            <h3>Disconnected vendors, no single system</h3>
+            <p>Three agencies, two tools, and nobody has full picture. Things fall through. Accountability gets diffused.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="solution">
+      <div class="section-inner">
+        <div class="section-tag">What We Build</div>
+        <h2 class="section-title">A predictable system that generates opportunities, converts them, and retains customers.</h2>
+        <p class="section-body">The Growth System combines every component your business needs to scale, built and managed by one team with full visibility across all of it.</p>
+
+        <div class="growth-pillars">
+          <div class="growth-pillar">
+            <div class="pillar-icon">📣</div>
+            <h3>Lead Generation</h3>
+            <p>Google Ads, Meta Ads, and referral systems built and managed to bring inbound opportunities consistently. Not just when you get lucky.</p>
+          </div>
+          <div class="growth-pillar">
+            <div class="pillar-icon">⚡</div>
+            <h3>Lead Conversion</h3>
+            <p>The full missed call text-back, qualification, follow-up, and booking system (the same foundation from the Lead Conversion offer) included and running.</p>
+          </div>
+          <div class="growth-pillar">
+            <div class="pillar-icon">🗂️</div>
+            <h3>CRM Management</h3>
+            <p>Every lead, every conversation, every stage tracked in one place. No more guessing who needs a follow-up or where a job fell off.</p>
+          </div>
+          <div class="growth-pillar">
+            <div class="pillar-icon">⭐</div>
+            <h3>Reputation Management</h3>
+            <p>Automated review requests sent at the right moment. More Google reviews, better ranking, more inbound trust. On autopilot.</p>
+          </div>
+          <div class="growth-pillar">
+            <div class="pillar-icon">🔄</div>
+            <h3>Re-engagement Campaigns</h3>
+            <p>Your past customers are warm leads. Automated sequences bring them back for repeat jobs and referrals, without any manual effort.</p>
+          </div>
+          <div class="growth-pillar">
+            <div class="pillar-icon">📈</div>
+            <h3>Reporting & Optimization</h3>
+            <p>A live dashboard showing what's generating revenue and what isn't. Monthly review, ongoing optimization. You make decisions with data.</p>
+          </div>
+        </div>
+
+        <div class="growth-includes">
+          <h3>Everything that's included</h3>
+          <div class="includes-grid">
+            <div class="includes-item"><span>Google Ads management</span></div>
+            <div class="includes-item"><span>Meta Ads management</span></div>
+            <div class="includes-item"><span>Referral system setup</span></div>
+            <div class="includes-item"><span>Missed call text-back</span></div>
+            <div class="includes-item"><span>Lead nurturing sequences</span></div>
+            <div class="includes-item"><span>Automated qualification</span></div>
+            <div class="includes-item"><span>Calendar booking system</span></div>
+            <div class="includes-item"><span>CRM pipeline management</span></div>
+            <div class="includes-item"><span>Appointment reminders</span></div>
+            <div class="includes-item"><span>Review generation</span></div>
+            <div class="includes-item"><span>Past customer re-engagement</span></div>
+            <div class="includes-item"><span>KPI reporting dashboard</span></div>
+            <div class="includes-item"><span>Monthly strategy review</span></div>
+            <div class="includes-item"><span>Continuous optimization</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: #F8FAFC; padding: 6rem 2rem;">
+      <div class="section-inner">
+        <div class="section-tag">Investment</div>
+        <h2 class="section-title">Built to pay for itself.</h2>
+        <p class="section-body">The Growth System is scoped to your business and priced on a strategy call. What we can tell you upfront: it is designed to generate a return that covers its own cost. A single additional job per month in most trades does exactly that.</p>
+
+        <div class="pricing-card">
+          <div class="pricing-left">
+            <h3>Performance-first pricing</h3>
+            <p>We scope every engagement around what your business actually needs and what results we can commit to. Pricing is confirmed on the strategy call after we understand your current volume, trade, and goals.</p>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #64748B;">The system is backed by a performance guarantee. If it does not generate measurable results in the first 30 days, you do not pay for setup. We only win when you win.</p>
+          </div>
+          <div class="pricing-right">
+            <span class="price-amount" style="font-size: 1.5rem; color: #85B7EB;">Scoped on call</span>
+            <span class="price-period">Guaranteed to perform or your setup is refunded</span>
+            <a href="https://calendly.com/nolan-nextgeninstitute/30min" target="_blank" style="display: inline-block; margin-top: 1.5rem; background: #378ADD; color: #fff; padding: 0.75rem 1.75rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Book a Strategy Call</a>
+            <p class="price-note">Free 30-minute call. No obligation.</p>
+          </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <h3 style="font-size: 1rem; font-weight: 600; color: #1E293B; margin-top: 3rem; margin-bottom: 0.25rem;">How it compares</h3>
+        <p style="font-size: 0.875rem; color: #64748B; margin-bottom: 0.5rem;">Lead Conversion vs. Full Growth System: what is included in each.</p>
+        <div style="overflow-x: auto;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Lead Conversion</th>
+                <th class="highlight">Full Growth System</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Missed call text-back</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Automated lead follow-up</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Lead qualification workflow</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Calendar booking integration</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>CRM pipeline</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Google Ads management</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Meta Ads management</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Reputation and review generation</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Past customer re-engagement</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Appointment reminder sequences</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>KPI reporting dashboard</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Monthly strategy review</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Ongoing optimization</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>    </section>
+
+    <section class="about">
+      <div class="section-inner">
+        <div class="section-tag">About NGI Edge</div>
+        <h2 class="section-title">Built by engineers. Measured by booked jobs.</h2>
+        <p class="about-body">NGI Edge is run by Nolan Campbell, mechanical engineer and construction industry consultant. We think in workflows, inputs, and outcomes. Not buzzwords and vanity metrics.</p>
+        <p class="about-body">Every system we install is built to produce one result: more booked jobs from the leads you're already getting. No jargon. No complex software to learn. We install it, you run your business.</p>
+        <div class="about-points">
+          <div class="about-point"><h4>Engineering background</h4><p>Systems thinking applied to your business. Not generic marketing tactics.</p></div>
+          <div class="about-point"><h4>Construction industry experience</h4><p>We understand how contractors work. No learning curve on our end.</p></div>
+          <div class="about-point"><h4>Installed in under a week</h4><p>No lengthy onboarding. No disruption to how you work.</p></div>
+          <div class="about-point"><h4>Measured by results</h4><p>We track conversations started, leads converted, and jobs booked.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="section-inner">
+        <div class="section-tag">Get Started</div>
+        <h2 class="section-title">Ready to stop losing jobs to slow response times?</h2>
+        <p>Book a free 15-minute call. We'll look at your current lead process and show you exactly where jobs are slipping through.</p>
+        <a href="https://calendly.com/nolan-nextgeninstitute/30min" target="_blank" class="cta-main">Book Your Free Call</a>
+        <span class="cta-note">No pitch. No pressure. Free 15-minute conversation.</span>
+      </div>
+    </section>
+
+  </div><!-- end page-lead-conversion -->
+
+
+  <!-- ════════════════════════════════════════════
+       PAGE 2: FULL GROWTH SYSTEM
+  ════════════════════════════════════════════ -->
+  <div id="page-growth-system" class="page">
+
+    <section class="hero hero-growth">
+      <div class="hero-inner">
+        <div class="hero-badge">Full Growth System for Ambitious Service Businesses</div>
+        <h1>Your Business Deserves a <span>Complete Growth Engine</span></h1>
+        <p>Stop patching individual problems. NGI Edge builds the complete infrastructure behind your business: lead generation, conversion, CRM, automation, and ongoing optimization in one integrated system.</p>
+        <a href="https://calendly.com/nolan-nextgeninstitute/30min" target="_blank" class="hero-cta">Book a Strategy Call</a>
+        <p class="hero-sub">Free 30-minute call. We'll map out exactly what your growth system would look like.</p>
+        <div class="hero-accent"></div>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="stats-inner">
+        <div>
+          <span class="stat-number">ROI-first</span>
+          <div class="stat-label">Scoped to your business. Priced to perform.</div>
+        </div>
+        <div>
+          <span class="stat-number">End-to-end</span>
+          <div class="stat-label">From first ad impression to repeat customer, all in one system</div>
+        </div>
+        <div>
+          <span class="stat-number">1 partner</span>
+          <div class="stat-label">One team. No agency juggling. No dropped balls between vendors.</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="problem">
+      <div class="section-inner">
+        <div class="section-tag">The Limitation</div>
+        <h2 class="section-title">Lead conversion is the start. Not the whole game.</h2>
+        <p class="section-body">You've plugged the leaks. Leads get responded to. Jobs are getting booked. Now the question is: how do you scale? Most contractors hit a ceiling because their growth infrastructure is stitched together: a Google Ads agency here, a part-time admin there, no unified system tracking what's actually working.</p>
+        <div class="problem-grid">
+          <div class="problem-card">
+            <div class="problem-icon">📊</div>
+            <h3>No visibility into what's driving revenue</h3>
+            <p>You're spending on ads but can't tell which campaigns, which keywords, or which channels are actually producing jobs.</p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon">🔁</div>
+            <h3>Past customers go cold</h3>
+            <p>Your best leads are people who already hired you. Most contractors never run a single re-engagement campaign.</p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon">🧩</div>
+            <h3>Disconnected vendors, no single system</h3>
+            <p>Three agencies, two tools, and nobody has full picture. Things fall through. Accountability gets diffused.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="solution">
+      <div class="section-inner">
+        <div class="section-tag">What We Build</div>
+        <h2 class="section-title">A predictable system that generates opportunities, converts them, and retains customers.</h2>
+        <p class="section-body">The Growth System combines every component your business needs to scale, built and managed by one team with full visibility across all of it.</p>
+
+        <div class="growth-pillars">
+          <div class="growth-pillar">
+            <div class="pillar-icon">📣</div>
+            <h3>Lead Generation</h3>
+            <p>Google Ads, Meta Ads, and referral systems built and managed to bring inbound opportunities consistently. Not just when you get lucky.</p>
+          </div>
+          <div class="growth-pillar">
+            <div class="pillar-icon">⚡</div>
+            <h3>Lead Conversion</h3>
+            <p>The full missed call text-back, qualification, follow-up, and booking system (the same foundation from the Lead Conversion offer) included and running.</p>
+          </div>
+          <div class="growth-pillar">
+            <div class="pillar-icon">🗂️</div>
+            <h3>CRM Management</h3>
+            <p>Every lead, every conversation, every stage tracked in one place. No more guessing who needs a follow-up or where a job fell off.</p>
+          </div>
+          <div class="growth-pillar">
+            <div class="pillar-icon">⭐</div>
+            <h3>Reputation Management</h3>
+            <p>Automated review requests sent at the right moment. More Google reviews, better ranking, more inbound trust. On autopilot.</p>
+          </div>
+          <div class="growth-pillar">
+            <div class="pillar-icon">🔄</div>
+            <h3>Re-engagement Campaigns</h3>
+            <p>Your past customers are warm leads. Automated sequences bring them back for repeat jobs and referrals, without any manual effort.</p>
+          </div>
+          <div class="growth-pillar">
+            <div class="pillar-icon">📈</div>
+            <h3>Reporting & Optimization</h3>
+            <p>A live dashboard showing what's generating revenue and what isn't. Monthly review, ongoing optimization. You make decisions with data.</p>
+          </div>
+        </div>
+
+        <div class="growth-includes">
+          <h3>Everything that's included</h3>
+          <div class="includes-grid">
+            <div class="includes-item"><span>Google Ads management</span></div>
+            <div class="includes-item"><span>Meta Ads management</span></div>
+            <div class="includes-item"><span>Referral system setup</span></div>
+            <div class="includes-item"><span>Missed call text-back</span></div>
+            <div class="includes-item"><span>Lead nurturing sequences</span></div>
+            <div class="includes-item"><span>Automated qualification</span></div>
+            <div class="includes-item"><span>Calendar booking system</span></div>
+            <div class="includes-item"><span>CRM pipeline management</span></div>
+            <div class="includes-item"><span>Appointment reminders</span></div>
+            <div class="includes-item"><span>Review generation</span></div>
+            <div class="includes-item"><span>Past customer re-engagement</span></div>
+            <div class="includes-item"><span>KPI reporting dashboard</span></div>
+            <div class="includes-item"><span>Monthly strategy review</span></div>
+            <div class="includes-item"><span>Continuous optimization</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: #F8FAFC; padding: 6rem 2rem;">
+      <div class="section-inner">
+        <div class="section-tag">Pricing</div>
+        <h2 class="section-title">One retainer. Everything managed.</h2>
+        <p class="section-body">No nickel-and-diming across vendors. No paying separately for tools you can't see into. One engagement, one team, full accountability.</p>
+
+        <div class="pricing-card">
+          <div class="pricing-left">
+            <h3>Full Growth System</h3>
+            <p>A fully managed growth infrastructure built for contractors doing $500K–$3M who are ready to scale. Includes everything: strategy, build, management, and ongoing optimization.</p>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #64748B;">Ad spend billed separately. Retainer covers strategy, management, and all automation infrastructure.</p>
+          </div>
+          <div class="pricing-right">
+            <span class="price-amount">$2,000–$4,000</span>
+            <span class="price-period">per month</span>
+            <a href="https://calendly.com/nolan-nextgeninstitute/30min" target="_blank" style="display: inline-block; margin-top: 1.5rem; background: #378ADD; color: #fff; padding: 0.75rem 1.75rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Book a Strategy Call</a>
+            <p class="price-note">Scope and pricing confirmed on discovery call</p>
+          </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <h3 style="font-size: 1rem; font-weight: 600; color: #1E293B; margin-top: 3rem; margin-bottom: 0.25rem;">How it compares</h3>
+        <p style="font-size: 0.875rem; color: #64748B; margin-bottom: 0.5rem;">Lead Conversion vs. Full Growth System: what is included in each.</p>
+        <div style="overflow-x: auto;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Lead Conversion<br><span style="font-weight: 400; font-size: 0.75rem; color: #94A3B8;">$1,500 setup + $400/mo</span></th>
+                <th class="highlight">Full Growth System<br><span style="font-weight: 400; font-size: 0.75rem; color: #85B7EB;">$2,000–$4,000/mo</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Missed call text-back</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Automated lead follow-up</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Lead qualification workflow</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Calendar booking integration</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>CRM pipeline</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Google Ads management</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Meta Ads management</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Reputation & review generation</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Past customer re-engagement</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Appointment reminder sequences</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>KPI reporting dashboard</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Monthly strategy review</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+              <tr><td>Ongoing optimization</td><td><span class="cross">×</span></td><td class="highlight-col"><span class="check">✓</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="section-inner">
+        <div class="section-tag">About NGI Edge</div>
+        <h2 class="section-title">Built by engineers. Measured by booked jobs.</h2>
+        <p class="about-body">NGI Edge is run by Nolan Campbell, mechanical engineer and construction industry consultant. We think in systems: inputs, outputs, and feedback loops. The Growth System is the full expression of that thinking applied to your business.</p>
+        <p class="about-body">We become the technology and growth infrastructure behind your business so you can generate more opportunities, convert more of them, and operate more efficiently.</p>
+        <div class="about-points">
+          <div class="about-point"><h4>Engineering background</h4><p>Systems thinking, not marketing fluff. Every component is built to feed the next.</p></div>
+          <div class="about-point"><h4>Construction industry experience</h4><p>We know how contractor businesses work. No steep learning curve on our end.</p></div>
+          <div class="about-point"><h4>One team, full accountability</h4><p>No diffused responsibility across vendors. One point of contact for everything.</p></div>
+          <div class="about-point"><h4>Measured by revenue, not activity</h4><p>We track jobs booked and revenue driven. Not impressions and click-through rates.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="section-inner">
+        <div class="section-tag">Get Started</div>
+        <h2 class="section-title">Ready to build a growth system behind your business?</h2>
+        <p>Book a free 30-minute strategy call. We'll map out what the full system would look like for your business and what it would take to build it.</p>
+        <a href="https://calendly.com/nolan-nextgeninstitute/30min" target="_blank" class="cta-main">Book a Strategy Call</a>
+        <span class="cta-note">Free 30-minute conversation. No obligation.</span>
+      </div>
+    </section>
+
+  </div><!-- end page-growth-system -->
+
 
   <footer>
     <img src="logo.png" alt="NGI Edge" style="height:44px; margin-bottom: 0.75rem;">
@@ -460,6 +1112,19 @@
   </div>
 
   <script>
+    function switchTab(tab) {
+      // Update tab buttons
+      document.querySelectorAll('.service-tab').forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+
+      // Show/hide pages
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-' + tab).classList.add('active');
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     function openModal(type) {
       document.getElementById(type + '-modal').classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -479,7 +1144,7 @@
   </script>
 
   <!-- GHL Chat Widget -->
- <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a0648aff7ab4176fdedd81f" data-source="WEB_USER"></script>
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a0648aff7ab4176fdedd81f" data-source="WEB_USER"></script>
 
 </body>
 </html>
